@@ -1,24 +1,28 @@
-function carregar() {
-  const msg = window.document.getElementById("msg");
-  const img = window.document.getElementById("imagem");
-  let data = new Date();
-  const hora = data.getHours();
-  const minutos = data.getMinutes();
-  msg.innerHTML = `Agora são ${hora} hora(s) e ${minutos} minuto(s).`;
+const horas = document.getElementById("horas");
+const minutos = document.getElementById("minutos");
+const segundos = document.getElementById("segundos");
+const msg = document.getElementById("msg");
+const timeOut = setInterval(updateTime, 1000);
 
-  switch (true) {
-    case hora >= 0 && hora < 12:
-      img.src = "img/manha.png";
-      document.body.style.background = "#d6c5b2";
-      break;
-    case hora >= 12 && hora <= 18:
-      img.scr = "img/tarde.png";
-      document.body.style.background = "#658699";
-      break;
-    default:
-      img.src = "img/noite.png";
-      document.body.style.background = "#001043";
-  }
+function addZero(numero) {
+  return numero < 10 ? "0" + numero : numero;
 }
 
-setInterval(() => carregar(), 1000 * 10);
+function updateTime() {
+  let data = new Date();
+  let hr = addZero(data.getHours());
+  let min = addZero(data.getMinutes());
+  let sec = addZero(data.getSeconds());
+
+  horas.textContent = hr;
+  minutos.textContent = min;
+  segundos.textContent = sec;
+
+  if (hr >= 0 && hr < 12) {
+    msg.innerHTML = `<div class="msg-icon"> Bom Dia <img src="assets/manha.svg"/></div>`;
+  } else if (hr >= 12 && hr <= 18) {
+    msg.innerHTML = `<div class="msg-icon"> Boa Tarde <img src="assets/tarde.svg"/></div>`;
+  } else {
+    msg.innerHTML = `<div class="msg-icon"> Boa Noite <img src="assets/noite.svg"/></div>`;
+  }
+}

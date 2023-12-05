@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>| Relógio |</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body onload="carregar()">
-    <header>
-     <h1>Hora do Dia</h1>
-     </header>
-     <section>
-     <div id="msg">
-      Aqui vai aparecer a mensagem...
-     </div>
-       <div id="foto">
-     <img id= "imagem" src="img/tarde.png" alt="imagem tarde">
-       </div>
-    </section>
-      <footer> 
-         <p> &copy; AlanaRocha </p>
-    </footer>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Relógio</title>
+  </head>
+  <body>
+    <div id="msg">
+    </div>
+    <div class="relogio">
+      <div>
+        <span id="horas">00</span>
+        <span class="tempo">Horas</span>
+      </div>
+
+      <div>
+        <span id="minutos">00</span>
+        <span class="tempo">Minutos</span>
+      </div>
+
+      <div>
+        <span id="segundos">00</span>
+        <span class="tempo">Segundos</span>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
