@@ -2,7 +2,7 @@ const horas = document.getElementById("horas");
 const minutos = document.getElementById("minutos");
 const segundos = document.getElementById("segundos");
 const msg = document.getElementById("msg");
-const timeOut = setInterval(updateTime, 1000);
+const timeOut = setInterval(updateTime, 10000);
 
 function addZero(numero) {
   return numero < 10 ? "0" + numero : numero;
@@ -26,3 +26,4 @@ function updateTime() {
     msg.innerHTML = `<div class="msg-icon"> Boa Noite <img src="assets/noite.svg"/></div>`;
   }
 }
+updateTime() 
