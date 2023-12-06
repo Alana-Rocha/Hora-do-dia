@@ -2,7 +2,7 @@ const horas = document.getElementById("horas");
 const minutos = document.getElementById("minutos");
 const segundos = document.getElementById("segundos");
 const msg = document.getElementById("msg");
-const timeOut = setInterval(updateTime, 10000);
+const timeOut = setInterval(updateTime, 1000);
 
 function addZero(numero) {
   return numero < 10 ? "0" + numero : numero;
